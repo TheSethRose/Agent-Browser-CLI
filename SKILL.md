@@ -140,7 +140,7 @@ Recording creates a fresh context but preserves cookies/storage from your sessio
 agent-browser wait @e1                     # Wait for element
 agent-browser wait 2000                    # Wait milliseconds
 agent-browser wait --text "Success"        # Wait for text
-agent-browser wait --url "**/dashboard"    # Wait for URL pattern
+agent-browser wait --url "/dashboard"    # Wait for URL pattern
 agent-browser wait --load networkidle      # Wait for network idle
 agent-browser wait --fn "window.ready"     # Wait for JS condition
 ```
@@ -259,7 +259,7 @@ agent-browser snapshot -i
 agent-browser fill @e1 "username"
 agent-browser fill @e2 "password"
 agent-browser click @e3
-agent-browser wait --url "**/dashboard"
+agent-browser wait --url "/dashboard"
 agent-browser state save auth.json
 
 # Later sessions: load saved state
@@ -321,3 +321,8 @@ agent-browser --cdp 9222 snapshot                    # Connect via CDP
 - Refs are stable per page load but change on navigation.
 - Always snapshot after navigation to get new refs.
 - Use fill instead of type for input fields to ensure existing text is cleared.
+
+## Reporting Issues
+
+- Skill issues: Open an issue at https://github.com/TheSethRose/Agent-Browser-CLI
+- agent-browser CLI issues: Open an issue at https://github.com/vercel-labs/agent-browser
